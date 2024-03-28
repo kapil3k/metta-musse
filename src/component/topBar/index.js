@@ -31,8 +31,8 @@ export const TopBar = () => {
 
   return (
     <div className="row px-2 py-3 m-0">
-      <div className="row">
-        <div className="col-4 d-flex align-items-center">
+      <div className="row m-0  mobile-padding">
+        <div className="col-4 d-flex align-items-center mobile-padding">
           {windowSize < 600 && <BurgerMenu />}
           <StarOutlined className="h2" />
         </div>

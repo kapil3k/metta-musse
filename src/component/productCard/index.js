@@ -36,7 +36,7 @@ const ProductCard = ({ productsData, showFilter }) => {
             />
             <p className="mt-1 mb-1">Price: '$'{product.price}</p>
             <p>Category: {product.category}</p>
-            <Rate allowHalf defaultValue={product.rating.rate} />
+            <Rate disabled allowHalf defaultValue={product.rating.rate} />
           </Card>
         </Col>
       ))}

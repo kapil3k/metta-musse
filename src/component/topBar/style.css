@@ -17,3 +17,9 @@
 .pointer {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+  .mobile-padding {
+    padding: 0px !important;
+  }
+}

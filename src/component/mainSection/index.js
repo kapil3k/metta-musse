@@ -2,6 +2,7 @@ import { DownOutlined, LeftOutlined } from "@ant-design/icons";
 import { Checkbox, Col, Collapse, Divider, Dropdown, Row } from "antd";
 import { useEffect, useState } from "react";
 import ProductCard from "../productCard";
+import ProductLoader from "../productLoader";
 import useWindowSize from "./../customHook/useWindowSize";
 import "./style.css";
 
@@ -11,11 +12,13 @@ const MainSection = () => {
   const [selectedtRec, setSelectedtRec] = useState("Recommended");
   const [showFilter, setShowFilter] = useState(true);
   const [productsData, setProductsData] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/")
       .then((res) => res.json())
-      .then((json) => setProductsData(json));
+      .then((json) => setProductsData(json))
+      .finally(() => setLoader(false));
   }, []);
 
   const handleFilter = () => {
@@ -347,7 +350,7 @@ const MainSection = () => {
             </strong>
           </Dropdown>
         </div>
-        <Divider className="colour-black" />
+        <Divider className="colour-black divder-mobile" />
         <Row gutter={16}>
           <Col sm={6}>
             <Row gutter={16}>
@@ -374,10 +377,14 @@ const MainSection = () => {
           </Col>
           <Col span={showFilter && windowSize > 600 ? 18 : 24}>
             <Row gutter={[16, 16]}>
-              <ProductCard
-                productsData={productsData}
-                showFilter={showFilter}
-              />
+              {loader ? (
+                <ProductLoader showFilter={showFilter} />
+              ) : (
+                <ProductCard
+                  productsData={productsData}
+                  showFilter={showFilter}
+                />
+              )}
             </Row>
           </Col>
         </Row>
