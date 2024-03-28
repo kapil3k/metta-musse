@@ -1,0 +1,33 @@
+.foot {
+  background-color: black;
+  color: white;
+  margin-top: 15px !important;
+}
+.email-input {
+  margin-right: 15px;
+}
+.foot-divier {
+  background: white;
+  margin: 20px 0;
+}
+.socail-icons {
+  font-size: 30px;
+  cursor: pointer;
+}
+.payment-icons {
+  background-color: white;
+  object-fit: contain;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.mobile-margin {
+  margin-top: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile-margin {
+    margin-top: 20px;
+    padding: 0px 10px;
+  }
+}

@@ -1,0 +1,14 @@
+.product-image {
+  height: 250px;
+  object-fit: contain;
+  padding: 12px 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  .product-image {
+    padding: 6px 12px;
+  }
+  .ant-card-body {
+    padding: 6px 12px !important;
+  }
+}

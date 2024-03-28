@@ -1,0 +1,28 @@
+.colour-black {
+  background: black;
+}
+
+.text-bolder {
+  font-weight: 800;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.ant-collapse-header {
+  padding: 12px 0 !important;
+}
+
+.ant-collapse-item {
+  border-bottom: 1px solid black !important;
+}
+
+.ant-collapse-item:last-child {
+  border-radius: 0px !important;
+}
+
+.ant-collapse-content-box {
+  padding-block: 0px !important;
+  padding: 4px !important;
+}
